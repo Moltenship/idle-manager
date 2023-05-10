@@ -6,7 +6,6 @@ const fireEvent = (eventName: BrowserEvent, target = document) => {
   document.dispatchEvent(event);
 }
 
-
 describe('Idle manager', () => {
   beforeEach(() => {
     vi.useFakeTimers();
