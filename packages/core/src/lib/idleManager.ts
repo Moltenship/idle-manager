@@ -6,6 +6,7 @@ const DEFAULT_ACTIVE_EVENTS = [
   'touchend',
   'touchend',
   'mousemove',
+  'keydown',
   'focus',
   'scroll',
   'visibilitychange'
@@ -16,6 +17,7 @@ const DEFAULT_OPTIONS: Options = {
   activeEvents: DEFAULT_ACTIVE_EVENTS,
   timeToIdleMs: 5000,
   ignoredEvents: [] as BrowserEvent[],
+  initialState: 'active',
 }
 
 
@@ -27,6 +29,7 @@ export function idleManager({
   activeEvents = DEFAULT_ACTIVE_EVENTS,
   timeToIdleMs = 1000,
   ignoredEvents = [],
+  initialState = 'active'
 } = DEFAULT_OPTIONS) {
   let timeoutId: number;
   let state: State = 'active'
@@ -64,7 +67,8 @@ export function idleManager({
 
   /** Inits idle manager. */
   const init = () => {
-    activeEvents.forEach(eventName => {
+    setState(initialState);
+    activeEvents.filter(eventName => !ignoredEvents.includes(eventName)).forEach(eventName => {
       if (eventName === 'visibilitychange') {
         document.addEventListener(eventName, handleVisibilityChange);
       } else {
@@ -92,7 +96,7 @@ export function idleManager({
   /** Disables idle manager and unsubscribes from all events. */
   const off: OffFn = () => {
     clearTimeout(timeoutId);
-    activeEvents.filter(eventName => !ignoredEvents.includes(eventName)).forEach(eventName => {
+    activeEvents.forEach(eventName => {
       document.removeEventListener(eventName, handleActiveEvent);
     });
     userListeners.get('active')?.clear();

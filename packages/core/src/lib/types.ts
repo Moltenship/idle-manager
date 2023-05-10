@@ -15,6 +15,8 @@ export interface Options {
   readonly timeToIdleMs?: number;
   /** List of events to ignore being `active`. */
   readonly ignoredEvents?: BrowserEvent[];
+  /** Initial state. */
+  readonly initialState?: State;
 }
 
 export type OnFn = (eventName: State, cb: () => void) => () => void;
