@@ -1,5 +1,16 @@
 {
   "name": "@idle-manager/core",
-  "version": "0.0.1",
-  "type": "commonjs"
+  "version": "0.0.4",
+  "type": "commonjs",
+  "author": {
+    "name": "Timofey Maximov",
+    "url": "https://github.com/moltenship"
+  },
+  "description": "Core package for Idle Manager.",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idle-manager/idle-manager"
+  },
+  "homepage": "https://github.com/idle-manager/idle-manager/#readme"
 }

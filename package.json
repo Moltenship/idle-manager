@@ -1,9 +1,19 @@
 {
   "name": "idle-manager",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "license": "MIT",
+  "description": "A simple idle manager for web-applications",
+  "author": {
+    "name": "Timofey Maximov",
+    "url": "https://github.com/moltenship"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/idle-manager/idle-manager"
+  },
+  "homepage": "https://github.com/idle-manager/idle-manager/#readme",
   "scripts": {},
-  "private": true,
+  "private": false,
   "devDependencies": {
     "@nx/eslint-plugin": "16.1.4",
     "@nx/js": "16.1.4",
