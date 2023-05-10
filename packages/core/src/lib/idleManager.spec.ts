@@ -1,4 +1,3 @@
-import { Mocked } from 'vitest';
 import {idleManager} from './idleManager';
 import { BrowserEvent } from './types';
 
