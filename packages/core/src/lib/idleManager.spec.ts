@@ -16,7 +16,7 @@ describe('Idle manager', () => {
     vi.clearAllTimers();
   });
 
-  it('fires cb on idle state', () => {
+  it('fires callback on idle state', () => {
     const cb = vi.fn(() => {});
 
     const manager = idleManager();
@@ -27,7 +27,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('fires several cbs on idle state', () => {
+  it('fires several callbacks on idle state', () => {
     const cb = vi.fn(() => {});
     const cb1 = vi.fn(() => {});
 
@@ -43,7 +43,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('fires cb on idle state after certain time', () => {
+  it('fires callback on idle state after certain time', () => {
     const timeMs = 10000
     const cb = vi.fn(() => {});
 
@@ -57,7 +57,7 @@ describe('Idle manager', () => {
   });
 
 
-  it('fires cb active state', () => {
+  it('fires callback active state', () => {
     const cb = vi.fn(() => {});
 
     const manager = idleManager({initialState: 'idle'});
@@ -84,7 +84,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('doesn\'t fire same cb in two subscriptions', () => {
+  it('doesn\'t fire same callback in two subscriptions', () => {
     const cb = vi.fn(() => {});
 
     const manager = idleManager({initialState: 'idle'});
@@ -98,7 +98,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('doesn\'t fire cb after unsubscribe', () => {
+  it('doesn\'t fire callback after unsubscribe', () => {
     const cb = vi.fn(() => {});
 
     const manager = idleManager();
@@ -110,7 +110,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('doesn\'t fire cb after unsubscribing from the manager', () => {
+  it('doesn\'t fire callback after unsubscribing from the manager', () => {
     const cb = vi.fn(() => {});
 
     const manager = idleManager();
@@ -137,7 +137,7 @@ describe('Idle manager', () => {
     manager.off();
   });
 
-  it('fires a cb after active state', () => {
+  it('fires callback after active state', () => {
     const cb = vi.fn(() => {});
 
 
