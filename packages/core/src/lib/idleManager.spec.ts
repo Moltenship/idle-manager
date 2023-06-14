@@ -1,4 +1,5 @@
-import {idleManager} from './idleManager';
+/* eslint-disable @typescript-eslint/no-empty-function */
+import { idleManager } from './idleManager';
 import { BrowserEvent } from './types';
 
 const fireEvent = (eventName: BrowserEvent, target = document) => {

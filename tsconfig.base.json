@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@idle-manager/core": ["packages/core/src/index.ts"]
+      "@idle-manager/core": ["packages/core/src/index.ts"],
+      "@idle-manager/react": ["packages/react/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
