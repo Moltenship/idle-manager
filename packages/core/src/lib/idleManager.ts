@@ -1,6 +1,6 @@
 import { BrowserEvent, OffFn, OnFn, Options, State } from "./types";
 
-const DEFAULT_ACTIVE_EVENTS = [
+export const DEFAULT_ACTIVE_EVENTS = [
   'click',
   'touchstart',
   'touchend',
@@ -13,7 +13,7 @@ const DEFAULT_ACTIVE_EVENTS = [
 ] satisfies BrowserEvent[];
 
 
-const DEFAULT_OPTIONS: Options = {
+export const DEFAULT_OPTIONS: Options = {
   activeEvents: DEFAULT_ACTIVE_EVENTS,
   timeToIdleMs: 5000,
   ignoredEvents: [] as BrowserEvent[],
@@ -27,7 +27,7 @@ const DEFAULT_OPTIONS: Options = {
  */
 export function idleManager({
   activeEvents = DEFAULT_ACTIVE_EVENTS,
-  timeToIdleMs = 1000,
+  timeToIdleMs = 5000,
   ignoredEvents = [],
   initialState = 'active'
 } = DEFAULT_OPTIONS) {
@@ -62,6 +62,7 @@ export function idleManager({
   }
 
   const handleActiveEvent = () => {
+    console.log('tetetete')
     setState('active');
   };
 

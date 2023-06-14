@@ -1,0 +1,19 @@
+{
+  "name": "@idle-manager/react",
+  "version": "0.0.1",
+  "main": "./index.js",
+  "types": "./index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    }
+  },
+  "peerDependencies": {
+    "react": "^18.0.2",
+    "react-dom": "^18.0.2"
+  },
+  "dependencies": {
+    "@idle-manager/core": "*"
+  }
+}
